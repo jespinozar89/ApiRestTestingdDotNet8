@@ -190,8 +190,8 @@ var builder = WebApplication.CreateBuilder(args);
 // ✅ Agrega servicios para controladores
 builder.Services.AddControllers();
 
-// Configura EF Core con Oracle 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Configura EF Core con SqlServer 
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
